@@ -2685,7 +2685,7 @@ inline std::string escape(std::string s)
  *
  * Note the order of escaping "~1" to "/" and "~0" to "~" is important.
  */
-static void unescape(std::string& s)
+void unescape(std::string& s)
 {
     replace_substring(s, "~1", "/");
     replace_substring(s, "~0", "~");
@@ -26534,6 +26534,7 @@ inline void swap<nlohmann::json>(nlohmann::json& j1, nlohmann::json& j2) noexcep
 
 } // namespace std
 
+#if 0 // Disabled as not modules-happy (or not clang-23 happy or something) (Seb)
 /*!
 @brief user-defined string literal for JSON values
 
@@ -26571,7 +26572,7 @@ inline nlohmann::json::json_pointer operator "" _json_pointer(const char* s, std
 {
     return nlohmann::json::json_pointer(std::string(s, n));
 }
-
+#endif
 // #include <nlohmann/detail/macro_unscope.hpp>
 
 
