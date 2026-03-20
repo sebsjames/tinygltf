@@ -87,7 +87,7 @@ if (TINYGLTF_INSTALL)
 
     if(TINYGLTF_INSTALL_VENDOR)
       INSTALL ( FILES
-        json.hpp
+        tiny_json.hpp
         stb_image.h
         stb_image_write.h
         DESTINATION
